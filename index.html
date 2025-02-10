@@ -123,6 +123,14 @@
 
         function moveNoButton() {
             let image = document.getElementById('monella-image');
+            let message = document.getElementById('monella-message');
+            image.style.display = 'block';
+            message.style.display = 'block';
+            setTimeout(() => {
+                image.style.display = 'none';
+                message.style.display = 'none';
+            }, 1500);
+            let image = document.getElementById('monella-image');
             image.style.display = 'block';
             setTimeout(() => { image.style.display = 'none'; }, 1500);
             let button = document.querySelector('.no');
