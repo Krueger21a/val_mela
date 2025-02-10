@@ -128,11 +128,11 @@
         }
         function checkPassword() {
             let input = document.getElementById('password-input').value;
-            let correctPassword = "20230211";
+            let correctPassword = "20230211";  // Replace with actual first date
 
             if (input === correctPassword) {
-                document.getElementById('password-page').classList.add('hidden');
-                document.getElementById('official-date-page').classList.remove('hidden');
+                document.getElementById('password-page').classList.add('hidden'); // Hide first page
+                document.getElementById('official-date-page').classList.remove('hidden'); // Show second page
             } else {
                 document.getElementById('error-message').style.display = 'block';
             }
