@@ -115,9 +115,10 @@
             from { transform: translateY(0px); }
             to { transform: translateY(-50px); }
         }
+
         function checkOfficialDate() {
             let input = document.getElementById('official-date-input').value;
-            let correctOfficialDate = "20230502";  // Replace with actual official date
+            let correctOfficialDate = "YYYYMMDD";  // Replace with actual official date
 
             if (input === correctOfficialDate) {
                 document.getElementById('official-date-page').classList.add('hidden');
@@ -126,53 +127,37 @@
                 document.getElementById('official-date-error').style.display = 'block';
             }
         }
+
         function checkPassword() {
             let input = document.getElementById('password-input').value;
-            let correctPassword = "20230211";  // Replace with actual first date
+            let correctPassword = "20230211"; // Replace with actual first date
 
             if (input === correctPassword) {
-                document.getElementById('password-page').classList.add('hidden'); // Hide first page
-                document.getElementById('official-date-page').classList.remove('hidden'); // Show second page
+                document.getElementById('password-page').classList.add('hidden');
+                document.getElementById('official-date-page').classList.remove('hidden');
             } else {
                 document.getElementById('error-message').style.display = 'block';
             }
         }
 
-        function goToValentinePage() {
-            document.getElementById('official-date-page').classList.add('hidden');
-            document.getElementById('main-content').classList.remove('hidden');
-        }
-
-        function goToTripPage() {
-            document.getElementById('main-content').classList.add('hidden');
-            document.getElementById('trip-page').classList.remove('hidden');
-        }
-
         function moveNoButton() {
             let image = document.getElementById('monella-image');
-
             let message = document.getElementById('monella-message');
+
             image.style.display = 'block';
             message.style.display = 'block';
-            setTimeout(() => {
-                image.style.display = 'none';
-                message.style.display = 'none';
-            }, 1500);
 
             setTimeout(() => {
                 image.style.display = 'none';
                 message.style.display = 'none';
             }, 1500);
+
             let button = document.querySelector('.no');
             let x = Math.random() * (window.innerWidth - 100);
             let y = Math.random() * (window.innerHeight - 50);
             button.style.position = 'absolute';
             button.style.left = x + 'px';
             button.style.top = y + 'px';
-
-            let message = document.getElementById('monella-message');
-            message.style.display = 'block';
-
         }
     </script>
 </body>
