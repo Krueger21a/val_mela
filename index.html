@@ -130,12 +130,15 @@
 
         function checkPassword() {
             let input = document.getElementById('password-input').value;
-            let correctPassword = "20230211"; // Replace with actual first date
+            console.log("Entered password:", input);  // Debugging line
+            let correctPassword = "20230211";
 
             if (input === correctPassword) {
+                console.log("Password is correct! Moving to the next page.");
                 document.getElementById('password-page').classList.add('hidden');
                 document.getElementById('official-date-page').classList.remove('hidden');
             } else {
+                console.log("Incorrect password!");
                 document.getElementById('error-message').style.display = 'block';
             }
         }
