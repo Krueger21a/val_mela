@@ -89,7 +89,8 @@
         </ul>
     </div>
 
-    <script>
+<script defer>
+    window.onload = function () {
         function triggerGifAnimation() {
             for (let i = 0; i < 5; i++) {
                 let gif = document.createElement('img');
@@ -109,11 +110,6 @@
             document.getElementById('main-content').classList.add('hidden');
             document.getElementById('trip-page').classList.remove('hidden');
             triggerGifAnimation();
-        }
-
-        @keyframes bounce {
-            from { transform: translateY(0px); }
-            to { transform: translateY(-50px); }
         }
 
         function checkOfficialDate() {
@@ -162,6 +158,13 @@
             button.style.left = x + 'px';
             button.style.top = y + 'px';
         }
-    </script>
+
+        // Attach functions to the window so they are accessible globally
+        window.checkPassword = checkPassword;
+        window.checkOfficialDate = checkOfficialDate;
+        window.goToTripPage = goToTripPage;
+        window.moveNoButton = moveNoButton;
+    };
+</script>
 </body>
 </html>
