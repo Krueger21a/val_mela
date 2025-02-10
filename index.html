@@ -56,20 +56,19 @@
 </head>
 <body>
     <div class="container" id="password-page">
+    <div class="container hidden" id="official-date-page">
+        <h1>Since when are we officially together? 💑</h1>
+        <input type="password" id="official-date-input" placeholder="YYYYMMDD" maxlength="8">
+        <br>
+        <button class="btn" onclick="checkOfficialDate()">Unlock 💕</button>
+        <p id="official-date-error" style="color: red; display: none;">Oops! Try again.</p>
+    </div>
         <img src="paris_image.jpeg" alt="Special Image" style="max-width: 200px; display: block; margin: 20px auto; border-radius: 10px;">
         <h1>Enter the special date we met 💑</h1>
-        <input type="password" id="password-input" placeholder="YYYYMMDD" maxlength="8">
+        <input type="password" id="password-input" placeholder="DDMMYYYY" maxlength="8">
         <br>
         <button class="btn" onclick="checkPassword()">Unlock 💕</button>
         <p id="error-message" style="color: red; display: none;">Oops! Try again. 😉</p>
-    </div>
-
-    <div class="container hidden" id="main-content">
-        <h1 class="typing">Will You Be My Valentine? ❤️</h1>
-        <img src="your_image.jpg" alt="Special Image" style="max-width: 300px; border-radius: 15px; margin-top: 15px;">
-        <img src="your_picture.jpg" alt="Us together"><br>
-        <a href="#trip-page" class="btn yes" onclick="goToTripPage()">Yes! 💕</a>
-        <a href="#" class="btn no" onclick="moveNoButton()">No... 😢</a>
     </div>
     
     <div class="container hidden fade-in" id="trip-page">
@@ -115,7 +114,7 @@
             let correctPassword = "20230211";  // Replace with the actual date in DDMMYYYY format
             
             if (input === correctPassword) {
-                document.getElementById('password-page').classList.add('hidden');
+                document.getElementBy Id('password-page').classList.add('hidden');
                 document.getElementById('main-content').classList.remove('hidden');
             } else {
                 document.getElementById('error-message').style.display = 'block';
@@ -128,7 +127,7 @@
         }
     </script>
 
-    <p id="monella-message" style="color: red; font-size: 24px; font-weight: bold; display: none;">Monella! 😂</p>
+    <p id="monella-message" style="color: red; font-size: 24px; font-weight: bold; display: none;">Monella! </p>
     <img id="monella-image" src="monella.png" alt="Funny Reaction" style="max-width: 200px; display: none; margin-top: 10px;">    
     <script>
         function moveNoButton() {
@@ -146,7 +145,35 @@
             message.style.display = 'block';
             setTimeout(() => { message.style.display = 'none'; }, 2500);
         }
+         function checkPassword() {
+            let input = document.getElementById('password-input').value;
+            let correctPassword = "20230211";  // Replace with the actual date in DDMMYYYY format
+
+            if (input === correctPassword) {
+                document.getElementById('password-page').classList.add('hidden');
+                document.getElementById('official-date-page').classList.remove('hidden');
+            } else {
+                document.getElementById('error-message').style.display = 'block';
+            }
+        }
+                function goToValentinePage() {
+            document.getElementById('official-date-page').classList.add('hidden');
+            document.getElementById('main-content').classList.remove('hidden');
+        }
+            let input = document.getElementById('password-input').value;
+            let correctPassword = "20230520";  // Replace with the actual date in DDMMYYYY format
+
+            if (input === correctPassword) {
+                document.getElementById('password-page').classList.add('hidden');
+                document.getElementById('official-date-page').classList.remove('hidden');
+                document.getElementById('official-date-page').classList.remove('hidden');
+                document.getElementById('main-content').classList.remove('hidden');
+            } else {
+                document.getElementById('error-message').style.display = 'block';
+            }
+        }
     </script>
+
 
     <script>
         function goToTripPage() {
